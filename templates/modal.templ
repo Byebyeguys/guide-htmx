@@ -89,7 +89,7 @@ templ AlpineModal() {
 					class="btn btn-secondary"
 					onclick="alpine_modal.showModal()"
 					x-data
-					x-on:click="$nextTick(() => $dispatch('modal-opened'))"
+					x-on:click="$nextTick(() => $dispatch('modal-opened', { trigger: $el }))"
 				>
 					Open Enhanced Modal
 				</button>
@@ -99,10 +99,10 @@ templ AlpineModal() {
 	<dialog
 		id="alpine_modal"
 		class="modal"
-		x-data="{ open: false }"
-		x-on:modal-opened.window="open = true"
-		x-on:close="open = false"
-		x-on:cancel="open = false"
+		x-data="{ open: false, trigger: null }"
+		x-on:modal-opened.window="open = true; trigger = $event.detail.trigger"
+		x-on:close="open = false; $nextTick(() => trigger?.focus())"
+		x-on:cancel="open = false; $nextTick(() => trigger?.focus())"
 	>
 		<div
 			class="modal-box"

@@ -16,6 +16,7 @@ templ generate && go run .
 | **Modals** | HTML `<dialog>` elements with focus trapping, keyboard navigation, and HTMX form submission |
 | **Drawers** | Sliding panels (left, right, bottom) using CSS transforms and Alpine.js transitions |
 | **Toasts** | Server-pushed notifications via SSE with auto-dismiss and queue management |
+| **Inline Swap** | Classic HTMX pattern with `hx-get` and `hx-swap="innerHTML"` |
 | **SSE** | Dead simple Server-Sent Events for real-time updates |
 
 ---
@@ -300,7 +301,6 @@ Note: Two newlines (`\n\n`) mark the end of a message.
 | `hx-delete` | DELETE request | `hx-delete="/items/1"` |
 | `hx-target` | Where to put response | `hx-target="#content"` |
 | `hx-swap` | How to swap content | `hx-swap="innerHTML"` |
-| `hx-swap="morph:innerHTML"` | Smooth DOM morphing | Uses Idiomorph |
 | `hx-swap="none"` | No DOM update | For SSE-only feedback |
 | `hx-vals` | Extra values to send | `hx-vals='{"key":"val"}'` |
 | `hx-indicator` | Loading indicator | `hx-indicator="#spinner"` |

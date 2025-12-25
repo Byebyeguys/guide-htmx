@@ -8,6 +8,7 @@ templ Index() {
 			<div class="flex flex-wrap justify-center gap-2 mt-4">
 				<div class="badge badge-primary">HTMX 2.0.8</div>
 				<div class="badge badge-secondary">Alpine.js 3.15.3</div>
+				<div class="badge badge-info">Tailwind CSS 4</div>
 				<div class="badge badge-accent">DaisyUI 5.5.14</div>
 				<div class="badge badge-neutral">Go + Templ</div>
 			</div>
@@ -45,6 +46,12 @@ templ Index() {
 								Warning Toast
 							</button>
 						</form>
+						<div class="divider divider-horizontal"></div>
+						<form hx-post="/spam-toasts" hx-swap="none">
+							<button type="submit" class="btn btn-outline">
+								Spam 5 Toasts
+							</button>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -74,6 +81,34 @@ templ Index() {
 				@RightDrawer()
 				@LeftDrawer()
 				@BottomDrawer()
+			</div>
+		</section>
+		<section class="mb-12">
+			<h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+				</svg>
+				Inline HTMX Swap
+			</h2>
+			<div class="card bg-base-100 shadow-xl">
+				<div class="card-body">
+					<p class="text-base-content/70 mb-4">
+						Classic HTMX pattern: click a button, swap HTML content inline. No SSE needed.
+					</p>
+					<div class="flex flex-wrap items-center gap-4">
+						<button
+							class="btn btn-primary"
+							hx-get="/random-quote"
+							hx-target="#quote-container"
+							hx-swap="innerHTML"
+						>
+							Get Random Quote
+						</button>
+						<div id="quote-container" class="flex-1 p-4 bg-base-200 rounded-lg min-h-[60px] flex items-center">
+							<span class="text-base-content/50 italic">Click the button to load a quote...</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 		<section class="mb-12">

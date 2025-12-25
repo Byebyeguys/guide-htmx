@@ -2,7 +2,9 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
+	"math/rand"
 	"net/http"
 	"time"
 
@@ -16,6 +18,8 @@ func main() {
 	http.HandleFunc("/", handleIndex)
 	http.HandleFunc("/sse", handleSSE)
 	http.HandleFunc("/trigger-toast", handleTriggerToast)
+	http.HandleFunc("/spam-toasts", handleSpamToasts)
+	http.HandleFunc("/random-quote", handleRandomQuote)
 	http.HandleFunc("/delete-item", handleDeleteItem)
 	http.HandleFunc("/form-submit", handleFormSubmit)
 
@@ -66,11 +70,11 @@ func handleDeleteItem(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Mock 3 second delay to show loading state
-	time.Sleep(3 * time.Second)
+	// Mock 2 second delay to show loading state
+	time.Sleep(2 * time.Second)
 
 	toast := map[string]string{
-		"type":    "error",
+		"type":    "success",
 		"message": "Item deleted successfully!",
 	}
 	data, _ := json.Marshal(toast)
@@ -88,7 +92,9 @@ func handleFormSubmit(w http.ResponseWriter, r *http.Request) {
 	name := r.FormValue("name")
 	email := r.FormValue("email")
 
-	// Simulate form processing
+	// Mock 2 second delay to show loading state
+	time.Sleep(2 * time.Second)
+
 	toast := map[string]string{
 		"type":    "success",
 		"message": "Form submitted! Name: " + name + ", Email: " + email,
@@ -98,4 +104,50 @@ func handleFormSubmit(w http.ResponseWriter, r *http.Request) {
 
 	// Return empty response - toast handles feedback
 	w.WriteHeader(http.StatusOK)
+}
+
+func handleSpamToasts(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	// Send 5 toasts with small delays to demo queue
+	types := []string{"success", "error", "info", "warning", "success"}
+	messages := []string{
+		"First toast incoming!",
+		"Oops, an error appeared!",
+		"Here's some info for you.",
+		"Warning: toast spam detected!",
+		"And we're done!",
+	}
+
+	go func() {
+		for i := 0; i < 5; i++ {
+			toast := map[string]string{
+				"type":    types[i],
+				"message": messages[i],
+			}
+			data, _ := json.Marshal(toast)
+			toastChan <- string(data)
+			time.Sleep(300 * time.Millisecond)
+		}
+	}()
+
+	w.WriteHeader(http.StatusOK)
+}
+
+var quotes = []string{
+	"The best way to predict the future is to invent it. — Alan Kay",
+	"Simplicity is the ultimate sophistication. — Leonardo da Vinci",
+	"First, solve the problem. Then, write the code. — John Johnson",
+	"Code is like humor. When you have to explain it, it's bad. — Cory House",
+	"Make it work, make it right, make it fast. — Kent Beck",
+	"Any fool can write code that a computer can understand. Good programmers write code that humans can understand. — Martin Fowler",
+}
+
+func handleRandomQuote(w http.ResponseWriter, r *http.Request) {
+	quote := quotes[rand.Intn(len(quotes))]
+	w.Header().Set("Content-Type", "text/html")
+	fmt.Fprintf(w, `<blockquote class="text-lg italic">"%s"</blockquote>`, quote)
 }

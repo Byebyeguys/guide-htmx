@@ -14,7 +14,7 @@ templ RightDrawer() {
 					class="btn btn-primary"
 					onclick="right_drawer.showModal()"
 					x-data
-					x-on:click="$nextTick(() => $dispatch('right-drawer-open'))"
+					x-on:click="$nextTick(() => $dispatch('right-drawer-open', { trigger: $el }))"
 				>
 					Open Right Drawer
 				</button>
@@ -23,11 +23,12 @@ templ RightDrawer() {
 	</div>
 	<dialog
 		id="right_drawer"
+		aria-labelledby="right_drawer_title"
 		class="modal modal-end"
-		x-data="{ open: false }"
-		x-on:right-drawer-open.window="open = true"
-		x-on:close="open = false"
-		x-on:cancel="open = false"
+		x-data="{ open: false, trigger: null }"
+		x-on:right-drawer-open.window="open = true; trigger = $event.detail.trigger"
+		x-on:close="open = false; $nextTick(() => trigger?.focus())"
+		x-on:cancel="open = false; $nextTick(() => trigger?.focus())"
 	>
 		<div
 			class="modal-box h-full max-h-full rounded-l-2xl rounded-r-none w-80"
@@ -40,7 +41,7 @@ templ RightDrawer() {
 			x-transition:leave-start="translate-x-0"
 			x-transition:leave-end="translate-x-full"
 		>
-			<h3 class="text-lg font-bold">Settings</h3>
+			<h3 id="right_drawer_title" class="text-lg font-bold">Settings</h3>
 			<div class="divider"></div>
 			<div class="space-y-4">
 				<label class="flex items-center justify-between cursor-pointer">
@@ -92,7 +93,7 @@ templ LeftDrawer() {
 					class="btn btn-secondary"
 					onclick="left_drawer.showModal()"
 					x-data
-					x-on:click="$nextTick(() => $dispatch('left-drawer-open'))"
+					x-on:click="$nextTick(() => $dispatch('left-drawer-open', { trigger: $el }))"
 				>
 					Open Nav Drawer
 				</button>
@@ -101,11 +102,12 @@ templ LeftDrawer() {
 	</div>
 	<dialog
 		id="left_drawer"
+		aria-labelledby="left_drawer_title"
 		class="modal modal-start"
-		x-data="{ open: false }"
-		x-on:left-drawer-open.window="open = true"
-		x-on:close="open = false"
-		x-on:cancel="open = false"
+		x-data="{ open: false, trigger: null }"
+		x-on:left-drawer-open.window="open = true; trigger = $event.detail.trigger"
+		x-on:close="open = false; $nextTick(() => trigger?.focus())"
+		x-on:cancel="open = false; $nextTick(() => trigger?.focus())"
 	>
 		<div
 			class="modal-box h-full max-h-full rounded-r-2xl rounded-l-none w-72"
@@ -118,7 +120,7 @@ templ LeftDrawer() {
 			x-transition:leave-start="translate-x-0"
 			x-transition:leave-end="-translate-x-full"
 		>
-			<h3 class="text-xl font-bold mb-4">Navigation</h3>
+			<h3 id="left_drawer_title" class="text-xl font-bold mb-4">Navigation</h3>
 			<ul class="menu bg-base-200 rounded-box w-full">
 				<li>
 					<a class="menu-active flex items-center gap-3">
@@ -191,7 +193,7 @@ templ BottomDrawer() {
 					class="btn btn-accent"
 					onclick="bottom_drawer.showModal()"
 					x-data
-					x-on:click="$nextTick(() => $dispatch('bottom-drawer-open'))"
+					x-on:click="$nextTick(() => $dispatch('bottom-drawer-open', { trigger: $el }))"
 				>
 					Open Bottom Sheet
 				</button>
@@ -200,11 +202,12 @@ templ BottomDrawer() {
 	</div>
 	<dialog
 		id="bottom_drawer"
+		aria-labelledby="bottom_drawer_title"
 		class="modal modal-bottom"
-		x-data="{ open: false }"
-		x-on:bottom-drawer-open.window="open = true"
-		x-on:close="open = false"
-		x-on:cancel="open = false"
+		x-data="{ open: false, trigger: null }"
+		x-on:bottom-drawer-open.window="open = true; trigger = $event.detail.trigger"
+		x-on:close="open = false; $nextTick(() => trigger?.focus())"
+		x-on:cancel="open = false; $nextTick(() => trigger?.focus())"
 	>
 		<div
 			class="modal-box rounded-t-2xl rounded-b-none"
@@ -220,7 +223,7 @@ templ BottomDrawer() {
 			<div class="flex justify-center mb-4">
 				<div class="w-12 h-1.5 bg-base-300 rounded-full"></div>
 			</div>
-			<h3 class="text-lg font-bold text-center">Choose an Action</h3>
+			<h3 id="bottom_drawer_title" class="text-lg font-bold text-center">Choose an Action</h3>
 			<div class="space-y-2 mt-4">
 				<button
 					class="btn btn-ghost w-full justify-start gap-3"

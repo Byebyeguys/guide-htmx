@@ -42,7 +42,7 @@ func Layout(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link href=\"https://cdn.jsdelivr.net/npm/daisyui@5\" rel=\"stylesheet\" type=\"text/css\"><script src=\"https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4\"></script><script src=\"https://unpkg.com/htmx.org@2.0.8\"></script><script src=\"https://unpkg.com/htmx-ext-sse@2.2.2/sse.js\"></script><script src=\"https://unpkg.com/idiomorph@0.7.3/dist/idiomorph-ext.min.js\"></script><script defer src=\"https://unpkg.com/@alpinejs/focus@3.15.3/dist/cdn.min.js\"></script><script defer src=\"https://unpkg.com/alpinejs@3.15.3/dist/cdn.min.js\"></script></head><body class=\"min-h-screen bg-base-200\" hx-ext=\"sse,morph\" sse-connect=\"/sse\"><div class=\"container mx-auto p-4 max-w-4xl\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link href=\"https://cdn.jsdelivr.net/npm/daisyui@5.5.14/daisyui.css\" rel=\"stylesheet\" type=\"text/css\"><script src=\"https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4\"></script><script src=\"https://unpkg.com/htmx.org@2.0.8\"></script><script src=\"https://unpkg.com/htmx-ext-sse@2.2.2/sse.js\"></script><script defer src=\"https://unpkg.com/@alpinejs/focus@3.15.3/dist/cdn.min.js\"></script><script defer src=\"https://unpkg.com/alpinejs@3.15.3/dist/cdn.min.js\"></script></head><body class=\"min-h-screen bg-base-200\" hx-ext=\"sse\" sse-connect=\"/sse\"><div class=\"container mx-auto p-4 max-w-4xl\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
